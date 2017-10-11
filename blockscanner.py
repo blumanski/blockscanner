@@ -31,7 +31,10 @@ for i in range(len(opreturns)):
 
 #converting hex to ascii
 for i in range(len(opreturns)):
-    opreturns[i] = binascii.unhexlify(opreturns[i]).decode('utf-8')
+    try:
+        opreturns[i] = binascii.unhexlify(opreturns[i]).decode('utf-8')
+    except:
+        continue
 
 #testing for prefix
 l = True
